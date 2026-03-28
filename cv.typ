@@ -27,16 +27,22 @@
 }
 #v(gap-after-summary)
 
-#cv-section(title: "Projects")[
-  #for p in projects { cv-entry(..p) }
+#if projects.len() > 0 [
+  #cv-section(title: "Projects")[
+    #for p in projects { cv-entry(..p) }
+  ]
 ]
 
-#cv-section(title: "Experience")[
-  #for e in experience { cv-entry(..e) }
+#if experience.len() > 0 [
+  #cv-section(title: "Experience")[
+    #for e in experience { cv-entry(..e) }
+  ]
 ]
 
-#cv-section(title: "Education")[
-  #for e in education { cv-entry(..e) }
+#if education.len() > 0 [
+  #cv-section(title: "Education")[
+    #for e in education { cv-entry(..e) }
+  ]
 ]
 
 #if publications.len() > 0 [
@@ -45,10 +51,14 @@
   ]
 ]
 
-#cv-section(title: "Courses, Training, and Certifications")[
-  #for c in certifications { cv-entry(..c) }
+#if certifications.len() > 0 [
+  #cv-section(title: "Courses, Training, and Certifications")[
+    #for c in certifications { cv-entry(..c) }
+  ]
 ]
 
-#cv-section(title: "Skills")[
-  #for s in skills { cv-skill-group(..s) }
+#if skills.len() > 0 [
+  #cv-section(title: "Skills")[
+    #for s in skills { cv-skill-group(..s) }
+  ]
 ]
