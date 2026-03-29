@@ -36,7 +36,7 @@
     // ── Tech stack ──
     if techs.len() > 0 {
       v(0.2em)
-      text(font: font-mono, size: size-meta, style: "italic")[#techs.join([,#h(0.4em)])]
+      text(font: font-mono, size: size-section, style: "italic")[#techs.join([,#h(0.4em)])]
     }
 
     // ── Detail bullets ──

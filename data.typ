@@ -2,7 +2,9 @@
 #let personal = (
   name: "JANE DOE",
   email: "jane@example.com",
+  phone: "+1 (555) 000-0000",
   github: "janedoe",
+  // linkedin: "janedoe",
   website: "janedoe.dev",
   location: "New York, NY",
   qr-url: "https://janedoe.dev",
@@ -115,6 +117,7 @@
     venue: "OSDI 2023",
     date: "2023",
     url: "https://arxiv.org/abs/2301.00000",
+    url-label: "arxiv",
   ),
 )
 

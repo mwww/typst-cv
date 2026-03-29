@@ -4,23 +4,29 @@
 // Usage:
 //   #cv-header(
 //     name: "JANE DOE",  // write in your preferred casing — stored as-is in the PDF
-//     email: "jane@example.com",   // optional
-//     github: "janedoe",           // optional — pass handle only
-//     website: "janedoe.dev",      // optional — pass domain only
-//     location: "New York, NY",    // optional
-//     qr-url: "https://janedoe.dev", // optional — URL encoded in QR code
+//     email: "jane@example.com",        // optional
+//     phone: "+1 (555) 000-0000",       // optional — displayed as-is
+//     github: "janedoe",                // optional — pass handle only
+//     linkedin: "janedoe",              // optional — pass handle only
+//     website: "janedoe.dev",           // optional — pass domain only
+//     location: "New York, NY",         // optional
+//     qr-url: "https://janedoe.dev",    // optional — URL encoded in QR code
 //   )
 #let cv-header(
   name: "",
   email: "",
+  phone: "",
   github: "",
+  linkedin: "",
   website: "",
   location: "",
   qr-url: "",
 ) = {
   let contacts = ()
   if email    != "" { contacts.push(link("mailto:" + email)[#email]) }
+  if phone    != "" { contacts.push(phone) }
   if github   != "" { contacts.push(link("https://github.com/" + github)[github.com/#github]) }
+  if linkedin != "" { contacts.push(link("https://linkedin.com/in/" + linkedin)[linkedin.com/in/#linkedin]) }
   if website  != "" { contacts.push(link("https://" + website)[#website]) }
   if location != "" { contacts.push(location) }
 
@@ -40,7 +46,8 @@
       text(font: font-mono, size: size-meta, contacts.join([#h(0.6em)·#h(0.6em)]))
     },
     // Right: QR code (omitted if no URL given)
-    if qr-url != "" { qr-code(qr-url, width: 2cm) },
+    // if qr-url != "" { qr-code(qr-url, width: 2cm) },
+    if qr-url != "" { qr-code(qr-url, width: 1.6cm) },
   )
   v(gap-after-header)
 }

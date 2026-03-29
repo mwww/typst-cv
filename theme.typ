@@ -5,7 +5,7 @@
 #let font-mono = ("JetBrains Mono", "Menlo", "Courier New")
 
 // ── Type scale ───────────────────────────────────────────────────────────────
-#let size-name    = 42pt
+#let size-name    = 40pt
 #let size-section =  7.5pt
 #let size-body    = 10pt
 #let size-meta    =  9pt

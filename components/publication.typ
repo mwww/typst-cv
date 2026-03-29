@@ -7,6 +7,7 @@
 //     venue: "OSDI 2023",            // optional
 //     date: "2023",                  // optional
 //     url: "https://arxiv.org/...",  // optional
+//     url-label: "arxiv",            // optional — defaults to "link"
 //   )
 #let cv-publication(
   title: "",
@@ -14,6 +15,7 @@
   venue: "",
   date: "",
   url: "",
+  url-label: "link",
 ) = {
   block(breakable: false, {
     grid(
@@ -29,8 +31,8 @@
       text(size: size-meta, style: "italic")[#venue]
     }
     if url != "" {
-      v(0.15em)
-      text(font: font-mono, size: size-meta)[#link(url)[#url]]
+      [ · ]
+      text(font: font-mono, size: size-meta)[#underline(link(url)[\[#url-label\]])]
     }
   })
   v(gap-between-entries)
