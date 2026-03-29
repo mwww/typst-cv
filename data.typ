@@ -4,7 +4,7 @@
   email: "jane@example.com",
   phone: "+1 (555) 000-0000",
   github: "janedoe",
-  // linkedin: "janedoe",
+  linkedin: "janedoe",
   website: "janedoe.dev",
   location: "New York, NY",
   qr-url: "https://janedoe.dev",

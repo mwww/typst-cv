@@ -23,12 +23,12 @@
   qr-url: "",
 ) = {
   let contacts = ()
-  if email    != "" { contacts.push(link("mailto:" + email)[#email]) }
-  if phone    != "" { contacts.push(phone) }
-  if github   != "" { contacts.push(link("https://github.com/" + github)[github.com/#github]) }
-  if linkedin != "" { contacts.push(link("https://linkedin.com/in/" + linkedin)[linkedin.com/in/#linkedin]) }
-  if website  != "" { contacts.push(link("https://" + website)[#website]) }
-  if location != "" { contacts.push(location) }
+  if email    != "" { contacts.push(box(link("mailto:" + email)[#email])) }
+  if phone    != "" { contacts.push(box(phone)) }
+  if github   != "" { contacts.push(box(link("https://github.com/" + github)[github.com/#github])) }
+  if linkedin != "" { contacts.push(box(link("https://linkedin.com/in/" + linkedin)[linkedin.com/in/#linkedin])) }
+  if website  != "" { contacts.push(box(link("https://" + website)[#website])) }
+  if location != "" { contacts.push(box(location)) }
 
   // ── Two-column layout: left = name + rule + contacts, right = QR ──
   grid(
